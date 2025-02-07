@@ -1,95 +1,332 @@
-/* General Styles */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-  }
-  
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .logo {
-    display: flex;
-    align-items: center;
-  }
-  
-  .logo img {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-  }
-  
-  .logo span {
-    font-size: 20px;
-    font-weight: bold;
-    color: #ff9900;
-  }
-  
-  .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  .nav-links li {
-    display: inline;
-  }
-  
-  .nav-links a {
-    text-decoration: none;
-    color: #333;
-    font-size: 16px;
-    font-weight: bold;
-    transition: color 0.3s;
-  }
-  
-  .nav-links a:hover {
-    color: #ff9900;
-  }
-  
-  .contact-button {
-    padding: 10px 20px;
-    background-color: #ff9900;
-    color: #fff;
-    border: none;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .contact-button:hover {
-    background-color: #e68a00;
-  }
-  
-  .mobile-menu {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-  }
-  
-  .menu-bar {
-    width: 25px;
-    height: 3px;
-    background-color: #333;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .nav-links,
-    .contact-button {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 8%;
+  background-color: white;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+}
+
+.logo img {
+  width: 32px;
+  height: 32px;
+  margin-right: 8px;
+}
+
+.logo-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #000;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+  margin-left: auto;
+  margin-right: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.nav-links a[href="#home"] {
+  color: #FFA500; 
+}
+
+.nav-links a[href="#about"] {
+  color: #4169E1;  
+}
+
+.nav-links a[href="#facilities"] {
+  color: #00BCD4;  
+}
+
+.nav-links a[href="#admission"] {
+  color: #9C27B0;  
+}
+
+.contact-btn {
+  background-color: #FFA500;
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-links, .contact-btn {
       display: none;
-    }
-  
-    .mobile-menu {
-      display: flex;
-    }
   }
-  
+
+  .menu-icon {
+      display: block;
+  }
+
+  .navbar {
+      padding: 1rem 5%;
+  }
+}
+.banner {
+  display: flex;
+  align-items: center;
+  padding: 4rem 8%;
+  background-color: white;
+  min-height: 80vh;
+  position: relative;
+}
+
+.banner-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.banner-heading {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.highlight-orange {
+  color: #FFA500;
+}
+
+.highlight-blue {
+  color: #00BCD4;
+}
+
+.banner-text {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.enroll-btn {
+  background-color: #000;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.banner-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+
+
+.banner-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .banner {
+      flex-direction: column;
+      text-align: center;
+      padding: 2rem 5%;
+  }
+
+  .banner-image {
+      order: -1;
+      margin-bottom: 2rem;
+      width: 100%;
+  }
+
+  .image-container {
+      width: 300px;
+      height: 300px;
+  }
+
+  .banner-heading {
+      font-size: 2.5rem;
+  }
+
+  .banner-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .banner-text {
+      max-width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+  }
+}
+
+.curriculum {
+  padding: 5rem 8%;
+  background-image: url('/api/placeholder/1440/800');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+.curriculum-title {
+  font-size: 2.5rem;
+  color: #000;
+  margin-bottom: 3rem;
+  font-weight: 600;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 300px;
+  text-align: center;
+  position: relative;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  border-radius: 1rem 1rem 0 0;
+}
+
+.kinder-card::before {
+  background: linear-gradient(90deg, #00BCD4, #87CEEB);
+}
+
+.elementary-card::before {
+  background: linear-gradient(90deg, #FFA500, #FFD700);
+}
+
+.middle-card::before {
+  background: linear-gradient(90deg, #9C27B0, #E1BEE7);
+}
+
+.card-image {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.card h3 {
+  color: #333;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.card p {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.read-more {
+  color: #00BCD4;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.kinder-card .read-more {
+  color: #00BCD4;
+}
+
+.elementary-card .read-more {
+  color: #FFA500;
+}
+
+.middle-card .read-more {
+  color: #9C27B0;
+}
+
+.arrow-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.arrow-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #FFA500;
+  background: white;
+  color: #FFA500;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .curriculum {
+      padding: 3rem 5%;
+  }
+
+  .card-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .card {
+      width: 90%;
+      margin-bottom: 1.5rem;
+  }
+
+  .curriculum-title {
+      font-size: 2rem;
+  }
+}
